@@ -28,7 +28,9 @@
 
 + (UINib *)nib
 {
-    return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:bundle];
+    //return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:[NSBundle mainBundle]];
 }
 
 + (NSString *)cellReuseIdentifier

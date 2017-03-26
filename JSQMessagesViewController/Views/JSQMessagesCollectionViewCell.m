@@ -84,7 +84,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
 + (UINib *)nib
 {
-    return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:[NSBundle bundleForClass:[self class]]];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:bundle];
+    //return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:[NSBundle bundleForClass:[self class]]];
 }
 
 + (NSString *)cellReuseIdentifier
